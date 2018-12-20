@@ -3,12 +3,7 @@ from testbuilder import printer
 from testbuilder import datatypes as types
 
 from testbuilder import data as d
-
-############################################
-#           Configuration variables
-############################################
-outputFile = "pokus.txt"
-nbOfTests = 10
+from testbuilder import cfg
 
 ############################################
 #            Code
@@ -21,7 +16,7 @@ passed testDefinitions.
 def createTests(testDefinitions, number = 0):
     for i in range(0, number):
         test = _generateTest(testDefinitions)
-        printer.printTest(outputFile, test)
+        printer.printTest(cfg.outputFile, test)
 
 """
 Prepares single test based on the given definitions list.
@@ -74,13 +69,4 @@ def _getRandomQuestionIndex(srcSize):
 
 
 if __name__ == '__main__':
-    definitions = [types.TestDefinition("2018_zk_pers", 4),
-                   types.TestDefinition("2018_zk_qa", 1),
-                   types.TestDefinition("2018_zk_sec", 4),
-                   types.TestDefinition("2018_zk_devops", 1),
-                   types.TestDefinition("2018_zk_arch", 6),
-                   types.TestDefinition("2018_zk_wss", 4),
-                   types.TestDefinition("2018_zk_med", 1),
-                   types.TestDefinition("2018_zk_long", 1)]
-
-    createTests(definitions, nbOfTests)
+    createTests(cfg.definitions, cfg.nbOfTests)

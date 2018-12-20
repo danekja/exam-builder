@@ -1,5 +1,7 @@
 # coding=utf-8
 
+from testbuilder import cfg
+
 ############################################
 #  Printer module - all formatting logic
 ############################################
@@ -9,18 +11,14 @@
 ############################################
 
 #             Formatting
-linesPerPage = 64
-columnsPerLine = 80
-questionTitle = ' Otázka '
-questionIndexDigits = 2
+# wrapper from cfg script, because im too lazy to find and prefix
+linesPerPage = cfg.linesPerPage
+columnsPerLine = cfg.columnsPerLine
+questionTitle = cfg.questionTitle
+questionIndexDigits = cfg.questionIndexDigits
 
-HEADING_LINES = 7
 CONTENT_COLUMNS = columnsPerLine - 2
 HALF_CONTENT_COLUMNS = int(CONTENT_COLUMNS / 2)
-LINES_PER_QUESTION = 8
-QUESTIONS_PER_FIRST_PAGE = 7 #this needs to be computed!
-QUESTIONS_PER_LAST_PAGE = 3  #this needs to be computed!
-EMPTY_LINES_FIRST_PAGE = linesPerPage - HEADING_LINES - QUESTIONS_PER_FIRST_PAGE * LINES_PER_QUESTION
 QUESTION_TITLE_LEN = len(questionTitle)
 QUESTION_HEADER_CONTENT_LEN = CONTENT_COLUMNS - questionIndexDigits - QUESTION_TITLE_LEN
 
@@ -69,10 +67,10 @@ Prints header of the test.
 def _printHeader(file):
     _print(file, '|{:#^{width}}|\n'.format('', width=CONTENT_COLUMNS))
     _print(file, '|{: ^{width}}|\n'.format('', width=CONTENT_COLUMNS))
-    _print(file, '|{: ^{width}}|\n'.format('Zápočtový test z PIA, ak. rok 2018/2019', width=CONTENT_COLUMNS))
+    _print(file, '|{: ^{width}}|\n'.format(cfg.header, width=CONTENT_COLUMNS))
     _print(file, '|{: ^{width}}|\n'.format('', width=CONTENT_COLUMNS))
-    _print(file, '|{: <{width}}'.format('Jméno:', width=HALF_CONTENT_COLUMNS), newline = False)
-    _print(file, '{: <{width}}|\n'.format('Os. číslo:', width=HALF_CONTENT_COLUMNS))
+    _print(file, '|{: <{width}}'.format(cfg.name, width=HALF_CONTENT_COLUMNS), newline = False)
+    _print(file, '{: <{width}}|\n'.format(cfg.personalNb, width=HALF_CONTENT_COLUMNS))
     _print(file, '|{:#^{width}}|\n'.format('', width=CONTENT_COLUMNS))
     _print(file, '|{: ^{width}}|\n'.format('', width=CONTENT_COLUMNS))
 
