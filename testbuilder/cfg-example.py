@@ -4,7 +4,7 @@ from testbuilder import datatypes as types
 #           Configuration variables
 ############################################
 #path to the output file
-outputFile = "pokus.txt"
+outputFile = "output.txt"
 #number of tests to generate
 nbOfTests = 10
 #number of lines per page, set for standard A4 by default
