@@ -82,8 +82,6 @@ Optional parameter index is used to mark question with particular number.
 e.g.: Question 1: What is your name?
 """
 def _printQuestion(file, q, index = 0):
-    if q.ownPage:
-        _printEndOfPage(file)
 
     #print question header
     _print(file, '|{:#^{width}}|\n'.format('', width=CONTENT_COLUMNS))
