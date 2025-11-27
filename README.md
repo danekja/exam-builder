@@ -32,6 +32,8 @@ Output will be found in `output.txt` file by default. With default
 configuration the contents of the whole file can be copied to a text processor
 and printed to A4 pages without any additional changes.
 
+Standard Word document. Font: Courier New. Font size: 9
+
 ## License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Exam Builder</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/danekja/exam-builder" property="cc:attributionName" rel="cc:attributionURL">Jakub Danek</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
